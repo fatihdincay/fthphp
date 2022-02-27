@@ -2,6 +2,22 @@
     <aside>
         <div class="row">
             <div class="col-12">
+                <?php 
+                $sorgu_reklam = $db -> prepare('select * from reklam limit 1');
+                $sorgu_reklam -> execute();
+                if($sorgu_reklam -> rowCount()){
+                    foreach($sorgu_reklam as $satir_reklam){
+                        $gorsel = $satir_reklam['gorsel'];
+                        $link = $satir_reklam['link'];
+                        $firma = $satir_reklam['firma'];
+                    }
+                }
+                ?>
+                <a href="<?php echo $link; ?>" target="_blank"><img src="<?php echo substr($gorsel,3); ?>" alt="" title="<?php echo $firma; ?>" class="img-fluid"></a>
+            </div>
+        </div>
+        <div class="row" mt-5>
+            <div class="col-12">
                 <h5>Bizi Takip Edin</h5>
                 <a href="<?php echo $satir['facebook']; ?>" target="_blank"><i class="bi bi-facebook" style="font-size:30px;"></i></a>
                 <a href="<?php echo $satir['instagram']; ?>" target="_blank"><i class="bi bi-instagram" style="font-size:30px;"></i></a>

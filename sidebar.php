@@ -57,7 +57,7 @@
                         foreach($sorgu_kategori as $satir_kategori){
                             ?>
                                 <small>
-                                <a href="kategori.php?id=<?php echo $satir_kategori['id']; ?>"><?php echo $satir_kategori['katadi']; ?></a><br>
+                                <a href="kategori.php?katadi=<?php echo $satir_kategori['katadi']; ?>"><?php echo $satir_kategori['katadi']; ?></a><br>
                                 </small>
                             <?php
                         }
